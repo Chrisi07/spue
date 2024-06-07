@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kelvin in Celsius Umrechner</title>
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            height: 100vh;
+
+            margin: 0;
+
+        }
+
+        .converter {
+
+            text-align: center;
+
+        }
+
+        .converter input, .converter button {
+
+            padding: 10px;
+
+            margin: 5px 0;
+
+            width: 200px;
+
+        }
+
+        .converter button {
+
+            cursor: pointer;
+
+        }
+
+        .converter .result {
+
+            margin-top: 10px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="converter">
+
+        <h2>Kelvin in Celsius Umrechner</h2>
+
+        <input type="number" id="kelvinInput" placeholder="Kelvin eingeben">
+
+        <button onclick="convertToCelsius()">Umrechnen</button>
+
+        <div class="result" id="result"></div>
+
+    </div>
+ 
+    <script>
+
+        function convertToCelsius() {
+
+            const kelvin = document.getElementById('kelvinInput').value;
+
+            if (kelvin === '') {
+
+                document.getElementById('result').textContent = 'Bitte geben Sie einen Wert ein.';
+
+                return;
+
+            }
+ 
+            const celsius = kelvin - 273.15;
+
+            document.getElementById('result').textContent = `${kelvin} Kelvin sind ${celsius.toFixed(2)} Celsius.`;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
